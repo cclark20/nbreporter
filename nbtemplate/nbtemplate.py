@@ -2,8 +2,6 @@ import os
 import sys
 import shutil
 import argparse
-import subprocess
-import yaml
 CONFIG_FILENAME = '.config_ipynb'
 PARAMS_YAML = '.yaml'
 

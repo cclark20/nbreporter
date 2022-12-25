@@ -16,6 +16,19 @@ The objective was to allow for a user to easily update and modify their notebook
 While it may seem that `nbconvert` already does this, the benefit is in the automtic report generation for many inputs using the same template. 
 
 ## Usage
+In your notebook template, add the following code to a cell at the top, to access the input yaml.
+```python
+import os
+import yaml
+PARAMS_YAML = '.yaml'
+if os.path.isfile(PARAMS_YAML):
+    with open(PARAMS_YAML, 'r') as f:
+        try:
+            inputs = yaml.safe_load(f)
+        except yaml.YAMLError as e:
+            print(e)
+```
+Once a notebook template is generated and an input yaml file is created, the `nbtemplate` module can be run, using the following command (from the command line).
 
 ```
 $ nbtemplate --template <your notebook>.ipynb --write_filename <output filename>.ipynb --custom_inputs <custom input file>.yaml
@@ -24,9 +37,17 @@ $ nbtemplate --template <your notebook>.ipynb --write_filename <output filename>
 Where `<your notebook>` is the name of your template, `<output filename>` is the name of the output `.ipynb` (sending to subdirectory is supported), and `<custom input file>` is the name (and location) of your input yaml.
 
 ### Example
-To run a report using the example template, follow these steps in the command line.
+To run a report using the example template, follow these steps in the command line. 
 
 ```
 $ cd examples/
-$ nbtemplate --template example_template.ipynb --write_filename notebooks/example.ipynb
+$ nbtemplate --template example_template.ipynb --write_filename notebooks/example.ipynb --custom_inputs inputs/example.yaml
+```
+
+This will generate the following outputs in the current directory:
+```
+notebooks/
+    example.ipynb
+reports/
+    example.html
 ```
