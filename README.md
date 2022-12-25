@@ -13,6 +13,8 @@ You are tasked with creating a Jupyter notebook template that generates identica
 
 The objective was to allow for a user to easily update and modify their notebook template, without having to recreate notebooks for every unique input. This ways the template is updated, and all reports are regenerated automatically from the command line.
 
+While it may seem that `nbconvert` already does this, the benefit is in the automtic report generation for many inputs using the same template. 
+
 ## Usage
 
 ```
