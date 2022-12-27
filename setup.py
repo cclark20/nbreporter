@@ -16,7 +16,7 @@ setup(
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     license = 'MIT',
-    packaes = find_packages(),
+    packages = find_packages(),
     entry_points = {
         'console_scripts': [
             'nbtemplate = nbtemplate.nbtemplate:main'
