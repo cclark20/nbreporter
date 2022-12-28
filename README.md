@@ -58,7 +58,7 @@ example
 $ nbtemplate --template <tempalte notebook>.ipynb --input_dir <input directory>
 ```
 
-Where `<template notebook>` is the name of your template and `<input file>` is the name (and location) of your input yaml. The outputted filenames will match the name of the input file.
+Where `<template notebook>` is the name of your template and `<input dir>` is the name of the directory with the input yamls. The outputted filenames will match the name of the input file.
 
 #### Example
 To run a report using the example template, follow these steps in the command line. 
