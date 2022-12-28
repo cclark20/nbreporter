@@ -1,6 +1,6 @@
 # v1.0.0 mvp
 * [x] parse input yaml in template
-* [ ] loop through all available yamls to generate multiple reports
+* [x] loop through all available yamls to generate multiple reports
     * inputs:
         * path to notebook template
         * path to folder with yamls
@@ -10,3 +10,4 @@
 
 # Future stuff
 * [ ] use subprocess instead of `os.system()`
+* [ ] convert all hard coded stuff to parameters
