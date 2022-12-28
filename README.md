@@ -30,24 +30,52 @@ if os.path.isfile(PARAMS_YAML):
 ```
 Once a notebook template is generated and an input yaml file is created, the `nbtemplate` module can be run, using the following command (from the command line).
 
+### Run for one input yaml.
 ```
-$ nbtemplate --template <your notebook>.ipynb --write_filename <output filename>.ipynb --custom_inputs <custom input file>.yaml
+$ nbtemplate --template <tempalte notebook>.ipynb --input_file <input file>.yaml
 ```
 
-Where `<your notebook>` is the name of your template, `<output filename>` is the name of the output `.ipynb` (sending to subdirectory is supported), and `<custom input file>` is the name (and location) of your input yaml.
+Where `<template notebook>` is the name of your template and `<input file>` is the name (and location) of your input yaml. The outputted filenames will match the name of the input file.
 
-### Example
+#### Example
 To run a report using the example template, follow these steps in the command line. 
-
 ```
 $ cd examples/
-$ nbtemplate --template example_template.ipynb --write_filename notebooks/example.ipynb --custom_inputs inputs/example.yaml
+$ nbtemplate --template example_template.ipynb --input_file inputs/example.yaml
 ```
 
 This will generate the following outputs in the current directory:
 ```
-notebooks/
-    example.ipynb
-reports/
-    example.html
+example
+|___notebooks
+|___|___example.ipynb
+|___reports
+|___|___example.md
+```
+
+### Run for multiple input yamls.
+```
+$ nbtemplate --template <tempalte notebook>.ipynb --input_dir <input directory>
+```
+
+Where `<template notebook>` is the name of your template and `<input dir>` is the name of the directory with the input yamls. The outputted filenames will match the name of the input file.
+
+#### Example
+To run a report using the example template, follow these steps in the command line. 
+```
+$ cd examples/
+$ nbtemplate --template example_template.ipynb -input_dir inputs/
+```
+
+This will generate the following outputs in the current directory:
+```
+example
+|___notebooks
+|___|___example.ipynb
+|___|___example2.ipynb
+|___|___example3.ipynb
+|___reports
+|___|___example.md
+|___|___example2.md
+|___|___example3.md
 ```
