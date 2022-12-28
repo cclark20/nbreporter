@@ -1,5 +1,5 @@
 # `nbtemplate`
-Execute and render Jupyter notebook templates to new file formats. Wrapper around iPython's `nbconvert` module.
+Execute and render custom Jupyter notebook templates to new file formats given one or multiple custom inputs. Wrapper around iPython's `nbconvert` module.
 
 ## Installation
 ```
@@ -9,9 +9,9 @@ $ pip install .
 ```
 
 ## Example Use Case and Objective
-You are tasked with creating a Jupyter notebook template that generates identical reports for multipalte, differing inputs. With this package, all you have to do is create your template notebook and your inputs as `yaml` files. The package will execute your template, with the given inputs, and generate a new notebook and whatever output format you desire (based on `nbconvert` options).
+You are tasked with creating a Jupyter notebook template that generates identical reports for multiple, differing inputs. With this package, all you have to do is create your template notebook and your inputs as `yaml` files. The package will execute your template, with the given inputs, and generate a new notebook and whatever output format you desire (based on `nbconvert` options).
 
-The objective was to allow for a user to easily update and modify their notebook template, without having to recreate notebooks for every unique input. This ways the template is updated, and all reports are regenerated automatically from the command line.
+The objective was to allow for a user to easily update and modify their notebook template, without having to manually recreate notebooks for every unique input. with `nbtemplate`, the template is updated and all reports can be regenerated automatically from the command line.
 
 While it may seem that `nbconvert` already does this, the benefit is in the automtic report generation for many inputs using the same template. 
 
