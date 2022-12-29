@@ -1,17 +1,17 @@
-# `nbtemplate`
+# `nbreporter`
 Execute and render custom Jupyter notebook templates to new file formats given one or multiple custom inputs. Wrapper around iPython's `nbconvert` module.
 
 ## Installation
 ```
-$ git clone https://github.com/cclark20/nbtemplate.git
-$ cd nbtemplate/
+$ git clone https://github.com/cclark20/nbreporter.git
+$ cd nbreporter/
 $ pip install .
 ```
 
 ## Example Use Case and Objective
 You are tasked with creating a Jupyter notebook template that generates identical reports for multiple, differing inputs. With this package, all you have to do is create your template notebook and your inputs as `yaml` files. The package will execute your template, with the given inputs, and generate a new notebook and whatever output format you desire (based on `nbconvert` options).
 
-The objective was to allow for a user to easily update and modify their notebook template, without having to manually recreate notebooks for every unique input. with `nbtemplate`, the template is updated and all reports can be regenerated automatically from the command line.
+The objective was to allow for a user to easily update and modify their notebook template, without having to manually recreate notebooks for every unique input. with `nbreporter`, the template is updated and all reports can be regenerated automatically from the command line.
 
 While it may seem that `nbconvert` already does this, the benefit is in the automtic report generation for many inputs using the same template. 
 
@@ -28,11 +28,11 @@ if os.path.isfile(PARAMS_YAML):
         except yaml.YAMLError as e:
             print(e)
 ```
-Once a notebook template is generated and an input yaml file is created, the `nbtemplate` module can be run, using the following command (from the command line).
+Once a notebook template is generated and an input yaml file is created, the `nbreporter` module can be run, using the following command (from the command line).
 
 ### Run for one input yaml.
 ```
-$ nbtemplate --template <tempalte notebook>.ipynb --input_file <input file>.yaml
+$ nbreporter --template <template notebook>.ipynb --input_file <input file>.yaml
 ```
 
 Where `<template notebook>` is the name of your template and `<input file>` is the name (and location) of your input yaml. The outputted filenames will match the name of the input file.
@@ -41,7 +41,7 @@ Where `<template notebook>` is the name of your template and `<input file>` is t
 To run a report using the example template, follow these steps in the command line. 
 ```
 $ cd examples/
-$ nbtemplate --template example_template.ipynb --input_file inputs/example.yaml
+$ nbreporter --template example_template.ipynb --input_file inputs/example.yaml
 ```
 
 This will generate the following outputs in the current directory:
@@ -55,7 +55,7 @@ example
 
 ### Run for multiple input yamls.
 ```
-$ nbtemplate --template <tempalte notebook>.ipynb --input_dir <input directory>
+$ nbreporter --template <tempalte notebook>.ipynb --input_dir <input directory>
 ```
 
 Where `<template notebook>` is the name of your template and `<input dir>` is the name of the directory with the input yamls. The outputted filenames will match the name of the input file.
@@ -64,7 +64,7 @@ Where `<template notebook>` is the name of your template and `<input dir>` is th
 To run a report using the example template, follow these steps in the command line. 
 ```
 $ cd examples/
-$ nbtemplate --template example_template.ipynb -input_dir inputs/
+$ nbreporter --template example_template.ipynb -input_dir inputs/
 ```
 
 This will generate the following outputs in the current directory:
