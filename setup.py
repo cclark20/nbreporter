@@ -7,11 +7,11 @@ long_description = 'Package to generate notebooks and other \
     output formats based off a notebook template.'
 
 setup(
-    name = 'nbtemplate',
-    version = '1.0.0',
+    name = 'nbreporter',
+    version = '1.0',
     author = 'Casey Clark',
     author_email = 'caseyclark0123@gmail.com',
-    url = 'https://github.com/cclark20/nbtemplate',
+    url = 'https://github.com/cclark20/nbreporter',
     description = 'Notebook template runner.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
@@ -19,7 +19,7 @@ setup(
     packages = find_packages(),
     entry_points = {
         'console_scripts': [
-            'nbtemplate = nbtemplate.nbtemplate:main'
+            'nbreporter = nbreporter.nbreporter:main'
         ]
     },
     classifiers = (
