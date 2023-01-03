@@ -18,15 +18,8 @@ While it may seem that `nbconvert` already does this, the benefit is in the auto
 ## Usage
 In your notebook template, add the following code to a cell at the top, to access the input yaml.
 ```python
-import os
-import yaml
-PARAMS_YAML = '.yaml'
-if os.path.isfile(PARAMS_YAML):
-    with open(PARAMS_YAML, 'r') as f:
-        try:
-            inputs = yaml.safe_load(f)
-        except yaml.YAMLError as e:
-            print(e)
+import nbreporter as nbr
+inputs = nbr.load_inputs()
 ```
 Once a notebook template is generated and an input yaml file is created, the `nbreporter` module can be run, using the following command (from the command line).
 
