@@ -19,7 +19,7 @@ setup(
     packages = find_packages(),
     entry_points = {
         'console_scripts': [
-            'nbreporter = nbreporter.cli:main'
+            'nbreporter = nbreporter.cli.main:main'
         ]
     },
     classifiers = (
